@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RudraCrafto - Photo Frames & Custom Gifts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <span>📍 Lal Bangla, Raksa Rahimpur, Dhaka</span>
+    <span>📞 8877577482</span>
+    <span class="top-right">Track Order &nbsp; | &nbsp; Support</span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark">R</div>
+      <div><b>Rudra<span>Crafto</span></b><small>PHOTO FRAMES | PVC CARDS | CUSTOM GIFTS</small></div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#customize">Customize</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button onclick="scrollToSection('customize')">Customize</button>
+      <button class="cart-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">✨ CUSTOM PHOTO GIFTS</div>
+        <h1>Turn Your Moments Into <strong>Beautiful Frames</strong></h1>
+        <p>Premium photo frames, PVC cards and custom gifts for every special moment.</p>
+        <div class="hero-buttons">
+          <button class="primary" onclick="scrollToSection('products')">Shop Now →</button>
+          <button class="secondary" onclick="scrollToSection('customize')">Create Your Frame</button>
+        </div>
+        <div class="trust-row">
+          <span>📷 High Quality</span><span>🎨 Custom Design</span><span>🚚 Fast Delivery</span><span>🔒 Secure Payment</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="frame frame-back">Better Together<br><small>♥</small></div>
+        <div class="frame frame-main">YOUR<br>PHOTO</div>
+        <div class="frame frame-small">YOUR<br>PHOTO</div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div>🖼️ <b>Photo Frames</b><small>For Home & Gifts</small></div>
+      <div>💳 <b>PVC Cards</b><small>ID, Visiting & More</small></div>
+      <div>🎁 <b>Custom Gifts</b><small>Mugs, Keychains</small></div>
+      <div>💍 <b>Wedding Cards</b><small>Premium Designs</small></div>
+      <div>🖨️ <b>Photo Printing</b><small>All Size Prints</small></div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div><h2>Our Best Selling Products</h2><p>Choose a product and customize it your way.</p></div>
+        <span class="green-text">View all →</span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="why" id="offers">
+      <h2>Why Choose RudraCrafto?</h2>
+      <div class="why-grid">
+        <div>🏆<b>Premium Quality</b><small>Beautiful finishing</small></div>
+        <div>✏️<b>Custom Designs</b><small>Made for you</small></div>
+        <div>🚚<b>Fast Delivery</b><small>Quick processing</small></div>
+        <div>🛡️<b>Happy Customers</b><small>Trusted service</small></div>
+      </div>
+    </section>
+
+    <section class="custom-section" id="customize">
+      <div class="section-head">
+        <div><h2>Customize Your Photo Frame</h2><p>Upload your photo and see a live preview.</p></div>
+      </div>
+      <div class="customizer">
+        <div class="steps">
+          <div class="step active"><b>1</b> Upload Photo</div>
+          <div class="step"><b>2</b> Choose Size</div>
+          <div class="step"><b>3</b> Choose Frame</div>
+          <div class="step"><b>4</b> Add To Cart</div>
+        </div>
+        <div class="upload-panel">
+          <label class="upload-box" for="photoUpload">
+            <span class="upload-icon">☁️</span>
+            <b>Click to Upload Photo</b>
+            <small>JPG, PNG • Max 10MB</small>
+            <input id="photoUpload" type="file" accept="image/*">
+          </label>
+          <div class="options">
+            <label>Frame Size
+              <select id="sizeSelect" onchange="updatePrice()">
+                <option value="299">5 × 7 inch — ₹299</option>
+                <option value="399">8 × 10 inch — ₹399</option>
+                <option value="599">A4 — ₹599</option>
+              </select>
+            </label>
+            <label>Frame Color
+              <select id="colorSelect" onchange="changeFrame()">
+                <option value="black">Black</option>
+                <option value="wood">Wood Brown</option>
+                <option value="white">White</option>
+              </select>
+            </label>
+            <button class="primary wide" onclick="addCustomToCart()">Add Customized Frame — ₹<span id="customPrice">299</span></button>
+          </div>
+        </div>
+        <div class="preview-area">
+          <div id="previewFrame" class="preview-frame black">
+            <img id="previewImg" alt="Your uploaded photo">
+            <div id="previewText">YOUR PHOTO</div>
+          </div>
+          <p>Live Preview</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <h2>Ready to create something special?</h2>
+        <p>Send your photo on WhatsApp after placing your order.</p>
+      </div>
+      <a class="whatsapp" href="https://wa.me/918877577482" target="_blank">💬 WhatsApp: 8877577482</a>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>Rudra<span>Crafto</span></b><p>Photo Frames | PVC Cards | Custom Gifts</p></div>
+    <div><b>Quick Links</b><p>Home · Products · Customize · Offers · Contact</p></div>
+    <div><b>Contact</b><p>📞 8877577482<br>📍 Lal Bangla, Raksa Rahimpur</p></div>
+    <div><b>Follow Us</b><p>● Instagram &nbsp; ● Facebook &nbsp; ● YouTube</p></div>
+    <div class="copyright">© 2026 RudraCrafto. All rights reserved.</div>
+  </footer>
+
+  <div class="modal" id="cartModal">
+    <div class="modal-card">
+      <button class="close" onclick="closeCart()">×</button>
+      <h2>Your Cart (<span id="modalCount">0</span>)</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">Total: <b>₹<span id="cartTotal">0</span></b></div>
+      <button class="primary wide" onclick="checkout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
